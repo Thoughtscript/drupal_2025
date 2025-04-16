@@ -1,0 +1,37 @@
+services:
+  mysql:
+    image: mysql:8.0
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE=drupal
+      - MYSQL_USER=user 
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password
+    networks:
+      - testnet
+    volumes:
+     - db-data:/var/lib/mysql
+
+  drupal:
+    build:
+      context: ./drupal
+      dockerfile: dockerfile
+    ports:
+      - 8080:80
+    networks:
+      - testnet
+    depends_on:
+      - mysql
+    volumes:
+      - /var/www/html/modules
+      - /var/www/html/profiles
+      - /var/www/html/themes
+      - /var/www/html/sites
+
+volumes:
+  db-data:
+
+networks:
+  testnet:
+    driver: bridge
