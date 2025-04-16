@@ -8,7 +8,7 @@
 
 Drupal on **LAMP** Stack. Just the very basics (**LAMP** Stack scaffold akin to [WAMP](https://sourceforge.net/projects/wampserver/)).
 
-> Uses **Apache** (over [FPM](https://www.php.net/manual/en/install.fpm.php) distributions which **FPM** with **Nginx** to serve HTTP Request/Responses).
+> Uses **Apache** (over [FPM](https://www.php.net/manual/en/install.fpm.php) distributions which use **FPM** with **Nginx** to serve HTTP Request/Responses).
 
 ## Setup and Use
 
